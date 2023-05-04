@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+
+
+<!--Encontre na rede 3 figuras: janela aberta, 
+    janelafechadaejanelaquebrada.
+    Criar uma página que no carregamento mostra ajanela 
+    fechada com um título “Abra a Janela”. Semover com o mouse sobre a imagem da janelafechada, 
+    mostra a janela aberta (abre a janela),se saircom o mouse da imagem mostra a
+     janelafechada (fecha a janela). Se clicar sobre aimagem mostra a 
+     imagem da janela quebrada(quebraajanela)-->
+
+<body style="align-content: center; border: 2px;">
+    <script>
+
+        function fechaJanela() {
+            var imagem = document.getElementById("img")
+            imagem.setAttribute("src", "janelafechada.png")
+
+            var t = document.getElementById("titulo")
+            t.innerHTML("Janela Fechada")
+        }
+
+
+
+        function quebraajanela() {
+            var imagem = document.getElementById("img")
+            imagem.setAttribute("src", "janelaquebra.png")
+            var t = document.getElementById("titulo")
+            t.innerHTML("Janela Quebrada")
+        }
+
+        function abreJanela() {
+            var imagem = document.getElementById("img")
+            imagem.setAttribute("src", "janelaaberta.png")
+            var t = document.getElementById("titulo")
+            t.innerHTML("Janela Aberta")
+        }
+
+    </script>
+    <div class="conteudo" style="align-content: center; border: 2px;">
+        <h1 class="title">
+            <p id="titulo">Janela Abre e Fecha</p>
+        </h1>
+        <div class="Janela">
+            <img src="janelaaberta.png" id="img" width="150" height="150" onmouseover="fechaJanela()"
+                onclick="quebraajanela()" onmouseout="abreJanela()" />
+        </div>
+    </div>
+</body>
+
+</html>
